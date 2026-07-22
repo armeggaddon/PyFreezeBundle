@@ -231,6 +231,17 @@ Once the bundle is executed, open your browser at `http://localhost:8099/docs` t
 
 ### Prerequisites
 
+A virtual environment with the desired packages should be created so that we can only bundle the items that are required for the workflow which reduces the size of utility.
+```bash
+python -m venv <<path of the virtual environment to be created>>
+```
+
+Activate the virtual environment
+
+```bash
+activate (or) source activate
+```
+
 ```bash
 pip install cx_Freeze fastapi uvicorn
 ```
@@ -250,7 +261,7 @@ pip install -r requirements.txt
 ### Step 1 — Build the executable
 
 ```bash
-python bundle.py build_exe
+python bundle.py build
 ```
 
 This triggers cx_Freeze to:
@@ -259,6 +270,8 @@ This triggers cx_Freeze to:
 3. Copy non-Python assets from `file_list`
 4. Strip out excluded packages
 5. Write everything into the `PyFreezeBundle/` output directory
+
+**NOTE: UTILITY CREATED IS OS SPECIFIC, CROSS PLATFORM SUPPORT IS NOT AVAILABLE**
 
 ### Step 2 — Run the executable
 
